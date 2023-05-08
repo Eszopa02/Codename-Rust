@@ -10,6 +10,7 @@ public class ThirdPersonCamera : MonoBehaviour
     public float mouseSensitivity = 10;
     public Transform target;
     public float dstFromTarget = 2;
+    public Vector2 pitchMinMax = new Vector2(-45, 45);
 
     float yaw;
     float pitch;
@@ -24,6 +25,7 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         yaw += Input.GetAxis ("Mouse X") * mouseSensitivity;
         pitch -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
+        pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 
         Vector3 targetRotation = new Vector3(pitch, yaw);
         transform.eulerAngles = targetRotation;
