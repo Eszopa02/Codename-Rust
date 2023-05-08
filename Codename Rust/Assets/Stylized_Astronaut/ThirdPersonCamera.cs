@@ -8,6 +8,8 @@ using UnityEngine;
 public class ThirdPersonCamera : MonoBehaviour
 {
     public float mouseSensitivity = 10;
+    public Transform target;
+    public float dstFromTarget = 2;
 
     float yaw;
     float pitch;
@@ -25,5 +27,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
         Vector3 targetRotation = new Vector3(pitch, yaw);
         transform.eulerAngles = targetRotation;
+
+        transform.position = target.position - transform.forward * dstFromTarget;
     }
 }
