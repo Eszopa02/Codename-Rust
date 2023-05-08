@@ -14,9 +14,12 @@ namespace AstronautPlayer
 		private Vector3 moveDirection = Vector3.zero;
 		public float gravity = 20.0f;
 
+		Transform cameraT;
+
 		void Start () {
 			controller = GetComponent <CharacterController>();
 			anim = gameObject.GetComponentInChildren<Animator>();
+			cameraT = Camera.main.transform;
 		}
 
 		void Update (){
@@ -27,7 +30,8 @@ namespace AstronautPlayer
 			}
 
 			if(controller.isGrounded){
-				moveDirection = transform.forward * Input.GetAxis("Vertical") * speed;
+				//moveDirection = transform.forward * Input.GetAxis("Vertical") * speed;
+				moveDirection = cameraT.forward * Input.GetAxis("Vertical") * speed;
 			}
 
 			float turn = Input.GetAxis("Horizontal");
