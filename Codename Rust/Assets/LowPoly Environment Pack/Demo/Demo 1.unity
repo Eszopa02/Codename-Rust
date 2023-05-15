@@ -19016,6 +19016,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2061062369}
     m_Modifications:
+    - target: {fileID: 197246448674789894, guid: 1cd6f3787ac3a3b499662b9ad700addf, type: 3}
+      propertyPath: conversation
+      value: Two Characters Speaking
+      objectReference: {fileID: 0}
+    - target: {fileID: 197246448674789894, guid: 1cd6f3787ac3a3b499662b9ad700addf, type: 3}
+      propertyPath: selectedDatabase
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c82958181a438942956e0ab92bc92b8, type: 2}
     - target: {fileID: 3328660376859251751, guid: 1cd6f3787ac3a3b499662b9ad700addf, type: 3}
       propertyPath: m_Name
       value: NPC
